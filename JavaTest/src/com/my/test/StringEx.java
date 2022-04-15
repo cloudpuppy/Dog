@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Solution2 : 대소문자 변환 
  * Solution3 : 문장속 단어 (IndexOf(), substring())
  * Solution4 : 단어 뒤집기 (StringBuilder(x).reverse())
- * Solution5 :
+ * Solution5 : test test test 
  *
  */
 public class StringEx {
