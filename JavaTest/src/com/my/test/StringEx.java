@@ -79,8 +79,23 @@ public class StringEx {
 	public ArrayList<String> solution4(Integer n ,String[] str) {
 		ArrayList<String>  answer =  new ArrayList<String>();
 		for(String x: str) {
+			//Case1
 			String tmp = new StringBuilder(x).reverse().toString();
 			answer.add(tmp);
+			
+			//Case2
+			/*
+			char[] s = x.toCharArray();
+			int lt = 0, rt = x.length()-1;
+			while(lt<rt) {
+				char temp = s[lt];
+				s[lt] = s[rt];
+				s[rt] = temp;
+				lt++;
+				rt++;
+				
+			}
+			String.valueOf(s);*/
 		}
 		return answer;
 	}
