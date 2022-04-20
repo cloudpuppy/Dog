@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Solution2 : 대소문자 변환 
  * Solution3 : 문장속 단어 (IndexOf(), substring())
  * Solution4 : 단어 뒤집기 (StringBuilder(x).reverse())
- * Solution5 : test test test 
+ * Solution5 : 특정 문자 뒤집기(toCharArray())
  *
  */
 public class StringEx {
@@ -100,6 +100,25 @@ public class StringEx {
 		}
 		return answer;
 	}
+	
+	public String solution5(String str){
+		String answer ="";
+		char[] s = str.toCharArray();
+		int lt=0, rt = str.length()-1;
+		while(lt <rt) {
+			if(!Character.isAlphabetic(s[lt])) lt++;
+			else if(!Character.isAlphabetic(s[rt])) rt--;
+			else {
+				char tmp = s[lt];
+				s[lt] = s[rt];
+				s[rt] = tmp;
+				lt++;
+				rt--;
+			}
+		}
+		answer = String.valueOf(s);
+		return answer;
+	}
 
 	public static void main(String[] args) {
 		StringEx T = new StringEx();
@@ -125,6 +144,7 @@ public class StringEx {
 		*/
 		
 		//Solution4
+		/*
 		Scanner kb = new Scanner(System.in);
 		int n = kb.nextInt();
 		String[] str = new String[n];
@@ -134,6 +154,11 @@ public class StringEx {
 		for (String x : T.solution4(n,str)) {
 			System.out.println(x);
 		}
+		*/
+		//Solution5
+		Scanner kb = new Scanner(System.in);
+		String str = kb.next();
+		System.out.println(T.solution5(str));
 		
 	}
 
