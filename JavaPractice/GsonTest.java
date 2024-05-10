@@ -136,4 +136,14 @@ public class GsonTest {
 		JsonTest jTest = gson.fromJson(wholeData, JsonTest.class);
 		System.out.println(jTest.name + " " + jTest.age);
 	}
+
+	static void readFromFile() throws IOException {
+		CommandInfoData commandInfoData = gson.fromJson(
+				String.join("", Files.readAllLines(Paths.get("INFO/COMMAND.JSON"))),
+				CommandInfoData.class);
+		commandInfoMap = new HashMap<>();
+		for (CommandInfo commandInfo : commandInfoData.getServerCommandInfoList()) {
+			this.commandInfoMap.put(commandInfo.getCommand(), commandInfo);
+		}
+	}
 }
